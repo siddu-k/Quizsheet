@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz with PIN</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- PIN Entry Page -->
+        <div id="pin-page">
+            <h1>Enter PIN</h1>
+            <input type="text" id="pin" placeholder="Enter your PIN">
+            <button onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Page -->
+        <div id="quiz-page" class="hidden">
+            <h1>Quiz</h1>
+            <div id="timer">Time Left: <span id="time">30</span> seconds</div>
+            <div id="quiz">
+                <div id="question">What is the capital of France?</div>
+                <div class="options">
+                    <button onclick="checkAnswer(this)" data-correct="false">Berlin</button>
+                    <button onclick="checkAnswer(this)" data-correct="true">Paris</button>
+                    <button onclick="checkAnswer(this)" data-correct="false">Madrid</button>
+                    <button onclick="checkAnswer(this)" data-correct="false">Rome</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Page -->
+        <div id="result-page" class="hidden">
+            <h1>Quiz Finished</h1>
+            <p>Your Score: <span id="score">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
